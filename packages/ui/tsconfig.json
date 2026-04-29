@@ -1,0 +1,11 @@
+{
+  "extends": "@yoshinani/style-guide/typescript/react-library",
+  "compilerOptions": {
+    "paths": {
+      "@repo/*": ["../../packages/*"]
+    },
+    "types": []
+  },
+  "include": ["src", "postcss.config.mjs", "turbo/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

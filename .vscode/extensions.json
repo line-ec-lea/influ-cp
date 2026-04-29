@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "biomejs.biome",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "mikestead.dotenv",
+    "streetsidesoftware.code-spell-checker",
+    "vitest.explorer"
+  ]
+}
