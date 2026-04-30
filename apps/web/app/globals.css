@@ -14,10 +14,11 @@
 
   --font-jp:
     "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3",
-    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, system-ui, sans-serif;
+    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, var(--font-jp-google),
+    system-ui, sans-serif;
   --font-mincho:
     YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro",
-    "游明朝", "ＭＳ 明朝", serif;
+    "游明朝", "ＭＳ 明朝", var(--font-mincho-google), serif;
   --font-en: var(--font-en-google), "Helvetica Neue", Arial, sans-serif;
 
   --container-page: 1620px;

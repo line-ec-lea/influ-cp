@@ -2,7 +2,7 @@ import "@repo/ui/src/styles/globals.css"
 import "./globals.css"
 
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google"
 
 import { Footer } from "./components/footer"
 import { Header } from "./components/header"
@@ -12,6 +12,20 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-en-google",
+  display: "swap",
+})
+
+const notoSansJp = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-jp-google",
+  display: "swap",
+})
+
+const notoSerifJp = Noto_Serif_JP({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-mincho-google",
   display: "swap",
 })
 
@@ -39,7 +53,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${inter.variable} font-jp antialiased`}>
+      <body
+        className={`${inter.variable} ${notoSansJp.variable} ${notoSerifJp.variable} font-jp antialiased`}
+      >
         <Header />
         <main>{children}</main>
         <Footer />
