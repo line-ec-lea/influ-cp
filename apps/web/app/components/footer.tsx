@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 import { CONTACTS, FOOTER_NAV, SITE } from "../lib/site-config"
@@ -7,7 +8,13 @@ export function Footer() {
     <footer className="bg-foreground text-background">
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 md:py-20">
         <div className="space-y-4">
-          <p className="font-en text-2xl font-bold tracking-widest">INFLU</p>
+          <Image
+            src="/images/themes/top/images/logo_w.png"
+            alt="株式会社INFLU"
+            width={160}
+            height={48}
+            className="h-10 w-auto"
+          />
           <p className="text-sm text-background/70">{SITE.description}</p>
         </div>
 

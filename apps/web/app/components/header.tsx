@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -18,10 +19,19 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container-page flex h-16 items-center justify-between md:h-20">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-en text-xl font-bold tracking-wider text-brand md:text-2xl">
-            INFLU
-          </span>
+        <Link
+          href="/"
+          className="flex items-center gap-2"
+          aria-label="株式会社INFLU トップへ"
+        >
+          <Image
+            src="/images/themes/top/images/logo.png"
+            alt="株式会社INFLU"
+            width={140}
+            height={40}
+            priority
+            className="h-8 w-auto md:h-10"
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
