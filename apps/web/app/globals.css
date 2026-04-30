@@ -1,0 +1,39 @@
+@theme {
+  --color-brand: #1f3a8a;
+  --color-brand-foreground: #ffffff;
+  --color-brand-muted: #f5f7fa;
+  --color-line: #06c755;
+  --color-line-foreground: #ffffff;
+
+  --font-jp:
+    var(--font-jp), "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --font-en: var(--font-en), "Helvetica Neue", Arial, sans-serif;
+
+  --container-page: 1200px;
+}
+
+@layer base {
+  body {
+    font-feature-settings: "palt" 1;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+  }
+}
+
+@utility container-page {
+  max-width: var(--container-page);
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (min-width: 768px) {
+    padding-inline: 2rem;
+  }
+}
