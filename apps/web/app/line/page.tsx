@@ -92,19 +92,22 @@ export default function LinePage() {
         background="muted"
       >
         <div className="mx-auto max-w-4xl">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcSet="/images/themes/top/images/line02.png"
-            />
-            <Image
-              src="/images/themes/top/images/line02-2.png"
-              alt="LINEで購入する理由"
-              width={1200}
-              height={680}
-              className="h-auto w-full"
-            />
-          </picture>
+          <Image
+            src="/images/themes/top/images/line02-2.png"
+            alt="LINEで購入する理由"
+            width={1200}
+            height={680}
+            sizes="(min-width: 768px) 0px, 100vw"
+            className="h-auto w-full md:hidden"
+          />
+          <Image
+            src="/images/themes/top/images/line02.png"
+            alt="LINEで購入する理由"
+            width={1200}
+            height={680}
+            sizes="(min-width: 768px) 1024px, 0px"
+            className="hidden h-auto w-full md:block"
+          />
         </div>
       </Section>
 

@@ -61,17 +61,22 @@ export function HeroSlider() {
             i === index ? "opacity-100" : "opacity-0",
           )}
         >
-          <picture>
-            <source media="(min-width: 768px)" srcSet={slide.pc} />
-            <Image
-              src={slide.sp}
-              alt=""
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className="object-cover"
-            />
-          </picture>
+          <Image
+            src={slide.sp}
+            alt=""
+            fill
+            priority={i === 0}
+            sizes="(min-width: 768px) 0px, 100vw"
+            className="object-cover md:hidden"
+          />
+          <Image
+            src={slide.pc}
+            alt=""
+            fill
+            priority={i === 0}
+            sizes="(min-width: 768px) 100vw, 0px"
+            className="hidden object-cover md:block"
+          />
         </div>
       ))}
 
