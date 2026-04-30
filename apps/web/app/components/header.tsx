@@ -17,36 +17,36 @@ export function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="container-page flex h-16 items-center justify-between md:h-20">
+    <header className="sticky top-0 z-40 w-full bg-white">
+      <div className="container-page flex h-[72px] items-center justify-between md:h-[96px]">
         <Link
           href="/"
-          className="flex items-center gap-2"
+          className="flex items-center"
           aria-label="株式会社INFLU トップへ"
         >
           <Image
             src="/images/themes/top/images/logo.png"
             alt="株式会社INFLU"
-            width={140}
-            height={40}
+            width={160}
+            height={48}
             priority
-            className="h-8 w-auto md:h-10"
+            className="h-9 w-auto md:h-12"
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {NAV.filter((n) => n.href !== "/contact").map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-brand"
+              className="text-[13px] font-bold tracking-wider text-ink transition-colors hover:text-accent-red"
             >
               {item.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="rounded-md bg-brand px-5 py-2.5 text-sm font-bold text-brand-foreground transition-opacity hover:opacity-90"
+            className="bg-ink px-7 py-3 text-[13px] font-bold tracking-wider text-white transition-colors hover:bg-accent-red"
           >
             CONTACT
           </Link>
@@ -56,20 +56,20 @@ export function Header() {
           <a
             href={CONTACTS.telHref}
             aria-label="電話で問い合わせる"
-            className="rounded-md border border-brand px-3 py-2 text-xs font-bold text-brand"
+            className="border border-ink px-3 py-2 text-[11px] font-bold tracking-widest text-ink"
           >
             TEL
           </a>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               aria-label="メニューを開く"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border"
+              className="inline-flex h-10 w-10 items-center justify-center border border-ink"
             >
               <span className="sr-only">メニュー</span>
               <div className="flex flex-col gap-1.5">
-                <span className="block h-0.5 w-5 bg-foreground" />
-                <span className="block h-0.5 w-5 bg-foreground" />
-                <span className="block h-0.5 w-5 bg-foreground" />
+                <span className="block h-0.5 w-5 bg-ink" />
+                <span className="block h-0.5 w-5 bg-ink" />
+                <span className="block h-0.5 w-5 bg-ink" />
               </div>
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
@@ -79,8 +79,10 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="rounded-md px-3 py-3 text-base font-medium hover:bg-muted"
+                    onClick={() => {
+                      setOpen(false)
+                    }}
+                    className="border-b border-rule px-3 py-4 text-base font-bold tracking-wide text-ink"
                   >
                     {item.label}
                   </Link>

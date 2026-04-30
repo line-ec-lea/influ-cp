@@ -2,23 +2,16 @@ import "@repo/ui/src/styles/globals.css"
 import "./globals.css"
 
 import type { Metadata } from "next"
-import { Inter, Noto_Sans_JP } from "next/font/google"
+import { Inter } from "next/font/google"
 
 import { Footer } from "./components/footer"
 import { Header } from "./components/header"
 import { SITE } from "./lib/site-config"
 
-const notoSansJp = Noto_Sans_JP({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-jp",
-  display: "swap",
-})
-
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-en",
+  variable: "--font-en-google",
   display: "swap",
 })
 
@@ -46,9 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body
-        className={`${notoSansJp.variable} ${inter.variable} font-jp antialiased`}
-      >
+      <body className={`${inter.variable} font-jp antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

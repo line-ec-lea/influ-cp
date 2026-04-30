@@ -8,7 +8,7 @@ type SectionProps = {
   title?: ReactNode
   lead?: ReactNode
   align?: "left" | "center"
-  background?: "default" | "muted" | "brand"
+  background?: "default" | "muted" | "muted-2" | "ink"
   className?: string
   children?: ReactNode
 }
@@ -27,9 +27,10 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "py-16 md:py-24",
+        "py-20 md:py-28",
         background === "muted" && "bg-brand-muted",
-        background === "brand" && "bg-brand text-brand-foreground",
+        background === "muted-2" && "bg-brand-muted-2",
+        background === "ink" && "bg-ink text-white",
         className,
       )}
     >
@@ -37,20 +38,22 @@ export function Section({
         {(eyebrow || title || lead) && (
           <header
             className={cn(
-              "mb-10 md:mb-14",
+              "mb-12 md:mb-16",
               align === "center" && "text-center",
             )}
           >
             {eyebrow && (
-              <p className="mb-3 font-en text-sm font-bold uppercase tracking-[0.2em] text-brand">
+              <p className="mb-4 font-en text-[11px] font-bold uppercase tracking-[0.4em] text-accent-red">
                 {eyebrow}
               </p>
             )}
             {title && (
-              <h2 className="text-2xl font-bold md:text-4xl">{title}</h2>
+              <h2 className="font-mincho text-3xl font-bold tracking-wider md:text-5xl">
+                {title}
+              </h2>
             )}
             {lead && (
-              <p className="mt-5 text-sm text-foreground/70 md:text-base">
+              <p className="mt-6 text-sm leading-loose text-ink-3 md:text-base">
                 {lead}
               </p>
             )}

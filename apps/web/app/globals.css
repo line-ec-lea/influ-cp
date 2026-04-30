@@ -1,22 +1,37 @@
 @theme {
-  --color-brand: #1f3a8a;
+  --color-brand: #000000;
   --color-brand-foreground: #ffffff;
-  --color-brand-muted: #f5f7fa;
+  --color-brand-muted: #f9f9f9;
+  --color-brand-muted-2: #eeeeee;
+  --color-brand-soft: #f3f3f3;
+  --color-accent-red: #d10000;
+  --color-ink: #000000;
+  --color-ink-2: #2d2929;
+  --color-ink-3: #4c4d55;
+  --color-rule: #e3e3e3;
   --color-line: #06c755;
   --color-line-foreground: #ffffff;
 
   --font-jp:
-    var(--font-jp), "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
-  --font-en: var(--font-en), "Helvetica Neue", Arial, sans-serif;
+    "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, system-ui, sans-serif;
+  --font-mincho:
+    YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro",
+    "游明朝", "ＭＳ 明朝", serif;
+  --font-en: var(--font-en-google), "Helvetica Neue", Arial, sans-serif;
 
-  --container-page: 1200px;
+  --container-page: 1620px;
+  --container-narrow: 1200px;
+  --container-text: 740px;
 }
 
 @layer base {
   body {
+    color: #000;
+    background: #fff;
     font-feature-settings: "palt" 1;
     line-height: 1.8;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
   }
 
   h1,
@@ -24,7 +39,7 @@
   h3,
   h4 {
     line-height: 1.4;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
   }
 }
 
@@ -35,9 +50,20 @@
     padding-inline: 1rem;
   }
 
+  .container-narrow {
+    max-width: var(--container-narrow);
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  .font-mincho {
+    font-family: var(--font-mincho);
+  }
+
   @media (min-width: 768px) {
-    .container-page {
-      padding-inline: 2rem;
+    .container-page,
+    .container-narrow {
+      padding-inline: 2.5rem;
     }
   }
 }

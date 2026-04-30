@@ -6,7 +6,7 @@ import Home from "./page"
 describe("Home page", () => {
   it("ヒーローのCTAリンクが描画される", () => {
     render(<Home />)
-    expect(screen.getByRole("link", { name: "無料で相談する" })).toBeTruthy()
+    expect(screen.getByRole("link", { name: "お問い合わせ" })).toBeTruthy()
     expect(screen.getByRole("link", { name: "サービスを見る" })).toBeTruthy()
   })
 

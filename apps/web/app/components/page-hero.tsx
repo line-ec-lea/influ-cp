@@ -8,16 +8,18 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, lead }: PageHeroProps) {
   return (
-    <section className="bg-gradient-to-br from-brand to-[#0f1f5a] py-20 text-brand-foreground md:py-28">
+    <section className="relative bg-ink py-20 text-white md:py-28">
       <div className="container-page text-center">
         {eyebrow && (
-          <p className="font-en text-xs font-bold uppercase tracking-[0.3em] opacity-80 md:text-sm">
+          <p className="font-en text-[11px] font-bold uppercase tracking-[0.4em] text-accent-red md:text-xs">
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-3 text-3xl font-bold md:text-5xl">{title}</h1>
+        <h1 className="mt-4 font-mincho text-3xl font-bold tracking-wider md:text-5xl">
+          {title}
+        </h1>
         {lead && (
-          <p className="mx-auto mt-6 max-w-2xl text-sm opacity-90 md:text-base">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-loose text-white/85 md:text-base">
             {lead}
           </p>
         )}
