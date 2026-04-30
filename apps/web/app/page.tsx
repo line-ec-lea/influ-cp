@@ -156,19 +156,22 @@ export default function Home() {
         background="muted-2"
       >
         <div className="mx-auto max-w-6xl">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcSet="/images/themes/top/images/promotion_image.png"
-            />
-            <Image
-              src="/images/themes/top/images/promotion_image_sp.png"
-              alt="プロモーション戦略フロー"
-              width={1500}
-              height={800}
-              className="h-auto w-full"
-            />
-          </picture>
+          <Image
+            src="/images/themes/top/images/promotion_image_sp.png"
+            alt="プロモーション戦略フロー"
+            width={1500}
+            height={800}
+            sizes="(min-width: 768px) 0px, 100vw"
+            className="h-auto w-full md:hidden"
+          />
+          <Image
+            src="/images/themes/top/images/promotion_image.png"
+            alt="プロモーション戦略フロー"
+            width={1500}
+            height={800}
+            sizes="(min-width: 768px) 1200px, 0px"
+            className="hidden h-auto w-full md:block"
+          />
         </div>
       </Section>
 
@@ -311,16 +314,20 @@ function InfoCard({
   return (
     <article className="overflow-hidden border border-rule bg-white">
       <div className="relative aspect-[16/9]">
-        <picture>
-          <source media="(min-width: 768px)" srcSet={image} />
-          <Image
-            src={imageSp}
-            alt={title}
-            fill
-            sizes="(min-width: 768px) 720px, 100vw"
-            className="object-cover"
-          />
-        </picture>
+        <Image
+          src={imageSp}
+          alt={title}
+          fill
+          sizes="(min-width: 768px) 0px, 100vw"
+          className="object-cover md:hidden"
+        />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="(min-width: 768px) 720px, 0px"
+          className="hidden object-cover md:block"
+        />
       </div>
       <div className="p-8">
         <h3 className="font-mincho text-xl font-bold tracking-wider">

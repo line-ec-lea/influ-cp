@@ -13,6 +13,7 @@ export function Footer() {
             alt="株式会社INFLU"
             width={180}
             height={48}
+            style={{ height: "auto" }}
             className="h-10 w-auto"
           />
           <p className="text-[13px] leading-loose text-white/70">

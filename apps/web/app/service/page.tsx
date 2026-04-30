@@ -90,16 +90,20 @@ export default function ServicePage() {
         >
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <picture>
-                <source media="(min-width: 768px)" srcSet={s.imagePc} />
-                <Image
-                  src={s.imageSp}
-                  alt={s.title}
-                  fill
-                  sizes="(min-width: 768px) 560px, 100vw"
-                  className="object-cover"
-                />
-              </picture>
+              <Image
+                src={s.imageSp}
+                alt={s.title}
+                fill
+                sizes="(min-width: 768px) 0px, 100vw"
+                className="object-cover md:hidden"
+              />
+              <Image
+                src={s.imagePc}
+                alt={s.title}
+                fill
+                sizes="(min-width: 768px) 560px, 0px"
+                className="hidden object-cover md:block"
+              />
             </div>
             <div>
               <p className="text-sm leading-relaxed text-foreground/80 md:text-base">
