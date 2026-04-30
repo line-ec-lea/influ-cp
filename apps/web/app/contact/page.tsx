@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
 import { Breadcrumb } from "../components/breadcrumb"
@@ -25,7 +26,14 @@ export default function ContactPage() {
       />
 
       <Section eyebrow="Form" title="カンタン1分入力">
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-2xl space-y-8">
+          <Image
+            src="/images/uploads/2022/08/form-flow-ttl.png"
+            alt="入力フロー"
+            width={800}
+            height={120}
+            className="mx-auto h-auto w-full max-w-md"
+          />
           <ContactForm />
         </div>
       </Section>

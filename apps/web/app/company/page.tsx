@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 
 import { Breadcrumb } from "../components/breadcrumb"
 import { CTABand } from "../components/cta-band"
@@ -11,6 +12,19 @@ export const metadata: Metadata = {
   description: "株式会社INFLUの代表挨拶・企業情報・アクセスをご案内します。",
 }
 
+const ROUTE_STEPS = [
+  "/images/themes/top/images/route01.png",
+  "/images/themes/top/images/route02.png",
+  "/images/themes/top/images/route03.png",
+  "/images/themes/top/images/route04.png",
+  "/images/themes/top/images/route05.png",
+  "/images/themes/top/images/route06.png",
+  "/images/themes/top/images/route07.png",
+  "/images/themes/top/images/route08.png",
+  "/images/themes/top/images/route09.png",
+  "/images/themes/top/images/route10.png",
+]
+
 export default function CompanyPage() {
   return (
     <>
@@ -20,18 +34,36 @@ export default function CompanyPage() {
       />
 
       <Section id="a01" eyebrow="Message" title="代表挨拶" align="left">
-        <div className="mx-auto max-w-3xl space-y-5 text-sm leading-relaxed text-foreground/80 md:text-base">
-          <p>
-            お客様の売上にコミットできるポイントを成長予測のうえで設計し、
-            長期的にアドバイスし続けられる組織であり続けることを大切にしています。
-          </p>
-          <p>
-            LINE公式アカウントを起点としたセールスマーケティングファネルを最短1ヶ月で構築し、
-            お客様の売上10億円までをワンストップでサポートすることが私たちのビジョンです。
-          </p>
-          <p className="text-right font-bold">
-            代表取締役 <span className="ml-2">{COMPANY.ceo}</span>
-          </p>
+        <div className="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-2">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+            <Image
+              src="/images/themes/top/images/company01.png"
+              alt={`代表取締役 ${COMPANY.ceo}`}
+              fill
+              sizes="(min-width: 768px) 480px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-5 text-sm leading-relaxed text-foreground/80 md:text-base">
+            <p>
+              お客様の売上にコミットできるポイントを成長予測のうえで設計し、
+              長期的にアドバイスし続けられる組織であり続けることを大切にしています。
+            </p>
+            <p>
+              LINE公式アカウントを起点としたセールスマーケティングファネルを最短1ヶ月で構築し、
+              お客様の売上10億円までをワンストップでサポートすることが私たちのビジョンです。
+            </p>
+            <p className="text-right font-bold">
+              代表取締役 <span className="ml-2">{COMPANY.ceo}</span>
+            </p>
+            <Image
+              src="/images/themes/top/images/name.png"
+              alt=""
+              width={240}
+              height={80}
+              className="ml-auto h-auto w-40"
+            />
+          </div>
         </div>
       </Section>
 
@@ -52,7 +84,16 @@ export default function CompanyPage() {
       </Section>
 
       <Section id="a02" eyebrow="Access" title="アクセス">
-        <div className="mx-auto max-w-3xl space-y-6">
+        <div className="mx-auto max-w-3xl space-y-8">
+          <div className="overflow-hidden rounded-xl border border-border bg-background">
+            <Image
+              src="/images/themes/top/images/access01.png"
+              alt="アクセスマップ"
+              width={1200}
+              height={680}
+              className="h-auto w-full"
+            />
+          </div>
           <p className="text-center text-sm text-foreground/80">
             〒{COMPANY.postalCode} {COMPANY.address}
           </p>
@@ -60,13 +101,35 @@ export default function CompanyPage() {
             {COMPANY.access.map((line) => (
               <li key={line} className="flex items-start gap-2">
                 <span
-                  className="mt-2 h-1 w-3 shrink-0 bg-brand"
                   aria-hidden="true"
+                  className="mt-2 h-1 w-3 shrink-0 bg-brand"
                 />
                 {line}
               </li>
             ))}
           </ul>
+
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
+            {ROUTE_STEPS.map((src, i) => (
+              <figure
+                key={src}
+                className="overflow-hidden rounded-lg border border-border bg-background"
+              >
+                <div className="relative aspect-square bg-brand-muted">
+                  <Image
+                    src={src}
+                    alt={`駅からのルート ${i + 1}`}
+                    fill
+                    sizes="(min-width: 768px) 200px, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="px-2 py-2 text-center font-en text-xs font-bold text-brand">
+                  STEP {String(i + 1).padStart(2, "0")}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </Section>
 
